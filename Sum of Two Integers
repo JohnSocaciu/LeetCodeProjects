@@ -1,0 +1,26 @@
+public class Solution{
+public int getSum(int a, int b) {
+        if(a == 0) {
+            return b;
+        }
+        
+        if(b == 0) {
+            return a;
+        }
+        
+        int carry = 0;
+        
+        while(b != 0) {  // Given two integers a and b, return the sum of the two integers without using the operators and -.
+            
+            // If both bits are 1, we set the bit to the left (<<1) to 1 -- this is the carry step
+            carry = (a & b) << 1;
+            
+            // If only 1 bit is 1, this will give us 1
+            a = a ^ b;
+            
+            b = carry; // to break loop 
+        }
+        
+        return a;
+    }
+}
