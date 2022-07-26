@@ -1,0 +1,22 @@
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+       
+        /*
+        for(int i = 0; i < nums.length; i++){
+            for(int j = i + 1; j < nums.length; j++){ Solution that isn't optimized for time 
+            if (nums[i] == nums[j]){
+                return true; 
+                }  
+            }
+        }
+        */
+        
+        HashSet<Integer> set = new HashSet<>(); // optimized for time 
+        for(int i : nums){                     // add elements to the set. if set already contains element then duplicate exists and return true
+            if(!set.add(i)){                   // o(n)
+                return true;
+                }
+            }
+        return false; // if there's no duplicate 
+        }
+    }
